@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8F64DD"
-    tools:context=".MainFragment" >
+    android:background="#D6D5D5"
+    tools:context=".MainFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_post"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/post_layout"/>
+        tools:listitem="@layout/post_layout" />
 </FrameLayout>
