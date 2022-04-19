@@ -18,12 +18,13 @@
         android:name="com.example.restapiassignment.PostDetailsFragment"
         android:label="fragment_post_details"
         tools:layout="@layout/fragment_post_details" >
-        <argument
-            android:name="post"
-            app:argType="com.example.restapiassignment.Post" />
         <action
             android:id="@+id/action_postDetailsFragment2_to_commentsFragment"
             app:destination="@id/commentsFragment" />
+        <argument
+            android:name="current_post"
+            app:argType="com.example.restapiassignment.Post"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/commentsFragment"

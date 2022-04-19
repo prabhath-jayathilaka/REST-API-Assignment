@@ -1,6 +1,7 @@
 package com.example.restapiassignment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,12 +43,21 @@ class PostDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val post = arguments?.getParcelable<Post>("post")
+       // val post = arguments?.get("current_post")
+        val post = arguments?.getParcelable<Post>("current_post")
+        view.findViewById<TextView>(R.id.tv_id).text = post!!.id.toString()
+        view.findViewById<TextView>(R.id.tv_userId).text = post.userId.toString()
+        view.findViewById<TextView>(R.id.tv_title).text = post.title
+        view.findViewById<TextView>(R.id.tv_body).text = post.body
+
+
+
+      /*  val post = arguments?.getParcelable<Post>("post")
         view.findViewById<TextView>(R.id.tv_id).text = post!!.id.toString()
         view.findViewById<TextView>(R.id.tv_userId).text = post!!.userId.toString()
         view.findViewById<TextView>(R.id.tv_title).text = post!!.title
         view.findViewById<TextView>(R.id.tv_body).text = post!!.body
-
+*/
 view.findViewById<Button>(R.id.btn_comments).setOnClickListener{
     view.findNavController().navigate(R.id.commentsFragment)
 }

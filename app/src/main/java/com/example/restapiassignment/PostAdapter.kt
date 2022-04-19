@@ -38,8 +38,10 @@ class PostAdapter (private var posts: List<Post>, private val communicator: View
 
         override fun onClick(p0: View?) {
             val currentItem = posts[adapterPosition]
-            val bundle = bundleOf("post" to currentItem)
-            communicator.findNavController().navigate(R.id.postDetailsFragment2, bundle)
+//            val bundle = bundleOf("post" to currentItem)
+//            communicator.findNavController().navigate(R.id.postDetailsFragment2, bundle)
+            val action =MainFragmentDirections.actionMainFragment2ToPostDetailsFragment2(currentItem)
+            communicator.findNavController().navigate(action)
         }
     }
 
